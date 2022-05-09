@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="frontcss.css">
+    <style>
+    
+    </style>
+</head>
+<body>
+    <div id="cont">
+
+    </div>
+</body>
+</html>
+<script>
+var investarray=JSON.parse(localStorage.getItem("data")) || []
+investarray.forEach(function(ele){
+
+    var box=document.createElement("div");
+var pic=document.createElement("img");
+pic.setAttribute("src",ele.invimg)
+var nam=document.createElement("h3");
+nam.innerText=ele.invname
+var pos=document.createElement("p");
+pos.innerText=ele.invrole;
+var log=document.createElement("img");
+log.setAttribute("src",ele.invlogo)
+
+
+box.append(pic,nam,pos,log);
+document.querySelector("#cont").append(box)
+
+    })
+</script>
